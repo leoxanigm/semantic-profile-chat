@@ -1,0 +1,24 @@
+[
+  {
+    "id": "frontend-performance",
+    "title": "Improving Frontend Performance",
+    "questions": [
+      "How do you diagnose frontend performance problems?",
+      "Describe a time you improved a slow web application.",
+      "Which metrics do you use to measure frontend performance?"
+    ],
+    "answer": "I begin by measuring performance with browser profiling tools and metrics such as Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift. In one project, I identified an oversized JavaScript bundle and unnecessary component re-renders as the main bottlenecks. I introduced route-based code splitting, lazy-loaded non-critical components, optimized images, and memoized expensive calculations. These changes reduced the initial bundle size and improved page responsiveness. I then compared the results against the original performance baseline to verify the improvement.",
+    "tags": ["frontend", "performance", "react", "optimization"]
+  },
+  {
+    "id": "difficult-bug",
+    "title": "Debugging a Difficult Production Issue",
+    "questions": [
+      "Tell me about a difficult bug you resolved.",
+      "How do you investigate production issues?",
+      "What is your debugging process?"
+    ],
+    "answer": "I first reproduce the issue when possible and collect evidence from logs, monitoring data, recent deployments, and user reports. For a production issue involving intermittent duplicate requests, I traced request identifiers across the frontend and backend and discovered that a retry mechanism was running alongside a manual fallback. I removed the conflicting behavior, added idempotency protection on the server, and introduced regression tests and monitoring. This fixed the immediate problem and reduced the risk of similar failures.",
+    "tags": ["debugging", "production", "problem-solving"]
+  }
+]
