@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./web:/app
+      - web-node-modules:/app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING="true"
+
+volumes:
+  web-node-modules:

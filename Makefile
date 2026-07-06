@@ -2,13 +2,14 @@ COMPOSE := docker compose
 
 .DEFAULT_GOAL := help
 
-.PHONY: help up start dev down stop restart build rebuild status logs \
+.PHONY: help up start dev dev-down down stop restart build rebuild status logs \
 	logs-api logs-web logs-ollama config pull clean reset
 
 help:
 	@echo "Available commands:"
 	@echo "  make up           Start all services in the background"
 	@echo "  make dev          Start all services with attached logs"
+	@echo "  make dev-down     Stop and remove development containers"
 	@echo "  make down         Stop and remove containers"
 	@echo "  make stop         Stop containers without removing them"
 	@echo "  make restart      Restart all services"
@@ -28,7 +29,10 @@ up start:
 	$(COMPOSE) up --detach
 
 dev:
-	$(COMPOSE) up
+	$(COMPOSE) -f docker-compose.yml -f docker-compose.dev.yml up --build
+
+dev-down:
+	$(COMPOSE) -f docker-compose.yml -f docker-compose.dev.yml down
 
 down:
 	$(COMPOSE) down

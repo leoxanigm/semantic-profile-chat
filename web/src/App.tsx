@@ -9,6 +9,14 @@ function App() {
 
   return (
     <>
+      <section id="search">
+        <h1>Semantic Profile Chat</h1>
+        <p>Type a question and hit enter.</p>
+        <input type="text" />
+      </section>
+      <section id="result">
+        <p>Result</p>
+      </section>
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
