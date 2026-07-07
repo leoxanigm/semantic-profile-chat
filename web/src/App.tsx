@@ -1,26 +1,13 @@
 import { useEffect, useState, type ChangeEvent, type SubmitEvent } from 'react';
 import './App.css';
 
-function animateIn(
-  text: string,
-  delay: number,
-  callback: (val: string) => void
-) {
-  for (let i = 0; i < text.length; i++) {
-    callback('');
-    setTimeout(() => callback(text.substring(0, i + 1)), delay * i);
-  }
-}
-
 function App() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
-  // const [placeholder, setPlaceholder] = useState('');
   const [sampleQuestions, setSampleQuestions] = useState<string[]>([]);
   const [sampleIndex, setSampleIndex] = useState(0);
   const [answerIndex, setAnswerIndex] = useState(0);
   const [visibleChars, setVisibleChars] = useState(0);
-  // const [displayedAnswer, setDisplayedAnswer] = useState('');
   const [inputActive, setInputActive] = useState<boolean>(false);
 
   const currentSample = sampleQuestions[sampleIndex] ?? '';
@@ -28,7 +15,7 @@ function App() {
     question || inputActive ? '' : currentSample.slice(0, visibleChars);
   const displayedAnswer = answer ? answer.slice(0, answerIndex) : '';
 
-  // Load sample questions from api
+  // Load example questions used for the animated input placeholder
   useEffect(() => {
     const abortController = new AbortController();
 
@@ -44,7 +31,8 @@ function App() {
     return () => abortController.abort();
   }, []);
 
-  // Loop through sample questions and animate them as input placeholders
+  // Cycle through sample questions and animate them as input placeholders
+  // This is only done when the input is not in focus
   useEffect(() => {
     if (sampleQuestions.length === 0 || inputActive) return;
 
@@ -57,6 +45,7 @@ function App() {
 
         clearInterval(intervalId);
 
+        // When we have animated in the question, load the next one
         timeoutId = setTimeout(() => {
           setVisibleChars(0);
           setSampleIndex(index => (index + 1) % sampleQuestions.length);
@@ -99,17 +88,24 @@ function App() {
         question
       })
     })
-      .then(async res => {
-        const response = await res.json();
+      .then(async response => {
+        const result = await response.json();
 
-        if (response.matched) setAnswer(response.answer);
-        else setAnswer(response.message);
+        if (!response.ok) {
+          setAnswer(result.error ?? 'The server returned an error.');
+          setAnswerIndex(0);
+          return;
+        }
+
+        if (result.matched) setAnswer(result.answer);
+        else setAnswer(result.message ?? 'I could not find a reliable answer.');
 
         setAnswerIndex(0);
       })
       .catch(error => {
         console.error(error);
         setAnswer('An error occurred while trying to fetch an answer');
+        setAnswerIndex(0);
       });
   }
 

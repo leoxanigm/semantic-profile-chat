@@ -17,6 +17,8 @@ export class SemanticIndex {
     if (records.length === 0)
       throw new Error('Cannot create an empty semantic index');
 
+    // Prefixes follow nomic-embed-text's retrieval format: documents are indexed
+    // as searchable content, while user input is embedded as a search query.
     const embeddings = await embedTexts(
       records.map(record => `search_document: ${record.question}`)
     );
@@ -41,6 +43,8 @@ export class SemanticIndex {
 
     if (!normalizedQuery) return [];
 
+    // Embed the incoming question with the query prefix before comparing it
+    // against the precomputed document embeddings.
     const [queryEmbedding] = await embedTexts([
       `search_query: ${normalizedQuery}`
     ]);

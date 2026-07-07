@@ -2,6 +2,8 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import * as z from 'zod';
 
+// The data file is treated as user created/editable content,
+// so validate it at startup and before building the semantic index.
 const InterviewAnswerSchema = z.object({
   id: z.string().trim().min(1),
   title: z.string().trim().min(1),

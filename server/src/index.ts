@@ -16,6 +16,9 @@ const QuerySchema = z.object({
 });
 
 async function start(): Promise<void> {
+  // Build the embedding index once at startup so each query only needs
+  // to embed the user's question and compare it with stored vectors.
+
   const dataModel = readData();
   const sampleQuestions = getSampleQuestions(dataModel);
   const indexRecords = createIndexRecords(dataModel);
@@ -40,7 +43,7 @@ async function start(): Promise<void> {
   app.get('/api/sample-questions', (_req, response) => {
     response.json({
       questions: sampleQuestions
-    })
+    });
   });
 
   app.post('/api/query', async (request, response) => {
@@ -58,6 +61,8 @@ async function start(): Promise<void> {
       const results = await semanticIndex.search(validation.data.question);
       const bestMatch = results[0];
 
+      // Only return an answer when the best semantic match is confident enough,
+      // otherwise return suggestions instead of guessing.
       if (bestMatch && bestMatch.score >= config.matchThreshold) {
         response.json({
           matched: true,

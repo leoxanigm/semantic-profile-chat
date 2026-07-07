@@ -7,6 +7,8 @@ function numberFromEnv(name: string, fallback: number): number {
   return value;
 }
 
+// Centralized runtime config. Docker Compose sets these values in production,
+// while the fallbacks keep local development usable with a default Ollama setup.
 export const config = {
   port: numberFromEnv('PORT', 3000),
   ollamaUrl: (process.env.OLLAMA_URL ?? 'http://localhost:11434')
