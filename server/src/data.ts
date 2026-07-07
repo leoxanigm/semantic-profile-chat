@@ -85,3 +85,10 @@ export function createIndexRecords(
     }))
   );
 }
+
+export function getSampleQuestions(dataModel: InterviewAnswer[]): string[] {
+  return dataModel
+    .map(records => records.questions[0] ?? '')
+    .filter(question => question)
+    .splice(0, 20);
+}

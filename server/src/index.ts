@@ -1,7 +1,7 @@
 import express from 'express';
 import { z } from 'zod';
 import { config } from './config.js';
-import { createIndexRecords, readData } from './data.js';
+import { createIndexRecords, readData, getSampleQuestions } from './data.js';
 import { SemanticIndex } from './semantic-index.js';
 
 const QuerySchema = z.object({
@@ -17,6 +17,7 @@ const QuerySchema = z.object({
 
 async function start(): Promise<void> {
   const dataModel = readData();
+  const sampleQuestions = getSampleQuestions(dataModel);
   const indexRecords = createIndexRecords(dataModel);
   const semanticIndex = await SemanticIndex.create(indexRecords);
 
@@ -34,6 +35,12 @@ async function start(): Promise<void> {
       answers: dataModel.length,
       questions: semanticIndex.size
     });
+  });
+
+  app.get('/api/sample-questions', (_req, response) => {
+    response.json({
+      questions: sampleQuestions
+    })
   });
 
   app.post('/api/query', async (request, response) => {

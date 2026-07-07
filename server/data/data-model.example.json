@@ -1,24 +1,233 @@
 [
   {
-    "id": "frontend-performance",
-    "title": "Improving Frontend Performance",
+    "id": "switzerland-overview",
+    "title": "Overview of Switzerland",
     "questions": [
-      "How do you diagnose frontend performance problems?",
-      "Describe a time you improved a slow web application.",
-      "Which metrics do you use to measure frontend performance?"
+      "What is Switzerland?",
+      "Give me a short overview of Switzerland.",
+      "Where is Switzerland located?"
     ],
-    "answer": "I begin by measuring performance with browser profiling tools and metrics such as Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift. In one project, I identified an oversized JavaScript bundle and unnecessary component re-renders as the main bottlenecks. I introduced route-based code splitting, lazy-loaded non-critical components, optimized images, and memoized expensive calculations. These changes reduced the initial bundle size and improved page responsiveness. I then compared the results against the original performance baseline to verify the improvement.",
-    "tags": ["frontend", "performance", "react", "optimization"]
+    "answer": "Switzerland, officially the Swiss Confederation, is a landlocked country located where Central, Western, and Southern Europe meet. It borders Germany, France, Austria, Liechtenstein, and Italy. The country is known for its federal political system, multilingual culture, Alpine geography, neutrality, financial sector, pharmaceutical industry, watchmaking, chocolate, cheese, and high quality of life.",
+    "tags": ["switzerland", "overview", "geography", "europe"]
   },
   {
-    "id": "difficult-bug",
-    "title": "Debugging a Difficult Production Issue",
+    "id": "switzerland-borders",
+    "title": "Countries Bordering Switzerland",
     "questions": [
-      "Tell me about a difficult bug you resolved.",
-      "How do you investigate production issues?",
-      "What is your debugging process?"
+      "Which countries border Switzerland?",
+      "What are Switzerland's neighbouring countries?",
+      "Who does Switzerland share borders with?"
     ],
-    "answer": "I first reproduce the issue when possible and collect evidence from logs, monitoring data, recent deployments, and user reports. For a production issue involving intermittent duplicate requests, I traced request identifiers across the frontend and backend and discovered that a retry mechanism was running alongside a manual fallback. I removed the conflicting behavior, added idempotency protection on the server, and introduced regression tests and monitoring. This fixed the immediate problem and reduced the risk of similar failures.",
-    "tags": ["debugging", "production", "problem-solving"]
+    "answer": "Switzerland borders five countries: Germany to the north, France to the west, Austria and Liechtenstein to the east, and Italy to the south. Its position places it at an important crossroads between several major European regions.",
+    "tags": ["switzerland", "borders", "geography", "europe"]
+  },
+  {
+    "id": "switzerland-geography",
+    "title": "Swiss Alps, Plateau, and Jura",
+    "questions": [
+      "What are Switzerland's main geographic regions?",
+      "How is Switzerland geographically divided?",
+      "What are the Alps, Plateau, and Jura in Switzerland?"
+    ],
+    "answer": "Switzerland is commonly divided into three major geographic regions: the Swiss Alps, the Swiss Plateau, and the Jura Mountains. The Alps cover much of the country's territory, while most of the population and many major economic centres are concentrated on the Swiss Plateau. The Jura Mountains form another important region, especially in the northwest.",
+    "tags": ["switzerland", "geography", "alps", "plateau", "jura"]
+  },
+  {
+    "id": "switzerland-capital-bern",
+    "title": "Bern as Federal City",
+    "questions": [
+      "What is the capital of Switzerland?",
+      "Is Bern the capital of Switzerland?",
+      "Why is Bern called the federal city?"
+    ],
+    "answer": "Bern is the seat of Switzerland's national government and is commonly called the federal city. Swiss law does not formally designate a capital in the same way many countries do, and some federal institutions are located in other cities such as Lausanne, Bellinzona, and St. Gallen. In practical terms, Bern serves as Switzerland's political centre.",
+    "tags": ["switzerland", "bern", "capital", "government"]
+  },
+  {
+    "id": "switzerland-cantons",
+    "title": "Swiss Cantons",
+    "questions": [
+      "How many cantons does Switzerland have?",
+      "What are Swiss cantons?",
+      "How is Switzerland divided politically?"
+    ],
+    "answer": "Switzerland is a federal republic made up of 26 cantons. Cantons are federated states with their own constitutions, parliaments, governments, police, and courts. They have a high degree of independence compared with many regional divisions in other countries, which is central to Swiss federalism.",
+    "tags": ["switzerland", "cantons", "federalism", "politics"]
+  },
+  {
+    "id": "switzerland-languages",
+    "title": "Languages of Switzerland",
+    "questions": [
+      "What languages are spoken in Switzerland?",
+      "What are Switzerland's official languages?",
+      "Why is Switzerland multilingual?"
+    ],
+    "answer": "Switzerland has four national languages: German, French, Italian, and Romansh. German is the most widely spoken, French is mainly spoken in the west, Italian in the south, and Romansh is spoken locally in parts of the canton of Grisons. This multilingual structure reflects Switzerland's regional diversity and long tradition of cultural pluralism.",
+    "tags": ["switzerland", "languages", "culture", "multilingualism"]
+  },
+  {
+    "id": "switzerland-population",
+    "title": "Population of Switzerland",
+    "questions": [
+      "What is Switzerland's population?",
+      "How many people live in Switzerland?",
+      "Is Switzerland a densely populated country?"
+    ],
+    "answer": "Switzerland has about 9 million residents. The population is not distributed evenly: many people live on the Swiss Plateau, where the largest cities and economic centres are located, while Alpine areas are generally less densely populated. Immigration has also played an important role in Switzerland's modern population growth.",
+    "tags": ["switzerland", "population", "demographics"]
+  },
+  {
+    "id": "switzerland-largest-cities",
+    "title": "Largest Swiss Cities",
+    "questions": [
+      "What are the largest cities in Switzerland?",
+      "Which Swiss cities are most important?",
+      "Is Zurich the largest city in Switzerland?"
+    ],
+    "answer": "Zurich is Switzerland's largest city, followed by major cities such as Geneva, Basel, Lausanne, Bern, Winterthur, Lucerne, St. Gallen, Lugano, and Biel/Bienne. These cities are important economic, cultural, educational, and transport centres, with Zurich and Geneva especially recognised internationally.",
+    "tags": ["switzerland", "cities", "zurich", "geneva", "basel"]
+  },
+  {
+    "id": "switzerland-direct-democracy",
+    "title": "Direct Democracy in Switzerland",
+    "questions": [
+      "How does direct democracy work in Switzerland?",
+      "Why is Switzerland known for referendums?",
+      "What political rights do Swiss citizens have?"
+    ],
+    "answer": "Direct democracy is one of the defining features of Switzerland's political system. Swiss citizens can use referendums to challenge laws passed by parliament and initiatives to propose constitutional changes. This gives voters a direct role in national decision-making alongside the representative institutions of parliament and government.",
+    "tags": ["switzerland", "direct-democracy", "referendum", "politics"]
+  },
+  {
+    "id": "switzerland-federal-council",
+    "title": "Swiss Federal Council",
+    "questions": [
+      "Who runs the Swiss government?",
+      "What is the Federal Council in Switzerland?",
+      "Does Switzerland have a president?"
+    ],
+    "answer": "The Swiss executive is the Federal Council, a seven-member collegial body elected by the Federal Assembly. Each councillor leads a federal department, and one member is elected each year as President of the Confederation. The president chairs and represents the government but does not have extra executive powers comparable to a presidential system.",
+    "tags": ["switzerland", "federal-council", "government", "politics"]
+  },
+  {
+    "id": "switzerland-parliament",
+    "title": "Swiss Federal Assembly",
+    "questions": [
+      "What is the Swiss parliament?",
+      "How is Switzerland's parliament structured?",
+      "What are the National Council and Council of States?"
+    ],
+    "answer": "Switzerland's parliament is the Federal Assembly. It has two chambers: the National Council, with 200 members apportioned by canton population, and the Council of States, with 46 members representing the cantons. Together they pass federal laws, elect the Federal Council, and oversee the federal government.",
+    "tags": ["switzerland", "parliament", "federal-assembly", "politics"]
+  },
+  {
+    "id": "switzerland-neutrality",
+    "title": "Swiss Neutrality",
+    "questions": [
+      "Why is Switzerland neutral?",
+      "What does Swiss neutrality mean?",
+      "Has Switzerland fought in international wars?"
+    ],
+    "answer": "Switzerland is known for its policy of armed neutrality. It has maintained neutrality for centuries and has not fought an international war since 1815. The policy does not mean isolation: Switzerland participates in diplomacy, peace building, humanitarian work, and international organisations while avoiding military alliances that would compromise neutrality.",
+    "tags": ["switzerland", "neutrality", "foreign-policy", "history"]
+  },
+  {
+    "id": "switzerland-un-membership",
+    "title": "Switzerland and the United Nations",
+    "questions": [
+      "When did Switzerland join the United Nations?",
+      "Is Switzerland a member of the UN?",
+      "Why is Geneva important to the United Nations?"
+    ],
+    "answer": "Switzerland became a full member of the United Nations in 2002 after a referendum. Geneva is especially important internationally because it hosts the Palace of Nations, the European headquarters of the United Nations, and many other international organisations connected with diplomacy, human rights, health, labour, and trade.",
+    "tags": ["switzerland", "united-nations", "geneva", "foreign-policy"]
+  },
+  {
+    "id": "switzerland-red-cross",
+    "title": "Switzerland and the Red Cross",
+    "questions": [
+      "What is Switzerland's connection to the Red Cross?",
+      "Was the Red Cross founded in Switzerland?",
+      "Why is Geneva important for humanitarian work?"
+    ],
+    "answer": "Switzerland is the birthplace of the Red Cross movement. Geneva is closely associated with humanitarian diplomacy, the Geneva Conventions, and international organisations. This role fits Switzerland's broader image as a centre for neutrality, mediation, humanitarian law, and global governance.",
+    "tags": ["switzerland", "red-cross", "geneva", "humanitarian"]
+  },
+  {
+    "id": "switzerland-economy",
+    "title": "Swiss Economy",
+    "questions": [
+      "What is Switzerland's economy known for?",
+      "Why is Switzerland wealthy?",
+      "What industries are important in Switzerland?"
+    ],
+    "answer": "Switzerland has a stable, prosperous, and high-tech economy. It is known for banking and finance, pharmaceuticals, biotechnology, watchmaking, precision engineering, technology, insurance, and multinational companies. Zurich and Geneva are major global cities, while Basel is a major centre for pharmaceuticals and life sciences.",
+    "tags": ["switzerland", "economy", "finance", "pharmaceuticals", "industry"]
+  },
+  {
+    "id": "switzerland-innovation-science",
+    "title": "Science and Innovation in Switzerland",
+    "questions": [
+      "Is Switzerland innovative?",
+      "What is Switzerland known for in science?",
+      "What scientific institutions are in Switzerland?"
+    ],
+    "answer": "Switzerland has a strong reputation for science, technology, and innovation. It has produced or hosted many Nobel laureates, and Albert Einstein developed his theory of special relativity while living in Bern. The Geneva region also hosts CERN, one of the world's most important centres for particle physics research and the birthplace of the World Wide Web.",
+    "tags": ["switzerland", "science", "innovation", "cern", "einstein"]
+  },
+  {
+    "id": "switzerland-currency",
+    "title": "Swiss Franc",
+    "questions": [
+      "What currency does Switzerland use?",
+      "Does Switzerland use the euro?",
+      "What is CHF?"
+    ],
+    "answer": "Switzerland uses the Swiss franc, abbreviated CHF. It does not use the euro as its official currency, although euros may sometimes be accepted in tourist areas or near borders. The Swiss franc is an important part of Switzerland's independent monetary and financial identity.",
+    "tags": ["switzerland", "currency", "swiss-franc", "chf"]
+  },
+  {
+    "id": "switzerland-history-founding",
+    "title": "Origins of Switzerland",
+    "questions": [
+      "When was Switzerland founded?",
+      "What is the Federal Charter of 1291?",
+      "How did Switzerland begin?"
+    ],
+    "answer": "Switzerland traces its origins to the Old Swiss Confederacy of the late Middle Ages, originally formed as a defensive and commercial alliance. The Federal Charter of 1291 is traditionally treated as a founding document. Swiss independence from the Holy Roman Empire was formally recognised in the Peace of Westphalia in 1648.",
+    "tags": ["switzerland", "history", "old-swiss-confederacy", "1291"]
+  },
+  {
+    "id": "switzerland-federal-state-1848",
+    "title": "Modern Federal State of 1848",
+    "questions": [
+      "When did Switzerland become a federal state?",
+      "What happened in Switzerland in 1848?",
+      "Why is 1848 important in Swiss history?"
+    ],
+    "answer": "Switzerland's modern federal state was established in 1848 with a new federal constitution. That constitution created the basic structure of today's Swiss political system, including federal institutions, separation of powers, bicameral parliament, individual rights, and the division of authority between the Confederation and the cantons.",
+    "tags": ["switzerland", "history", "constitution", "1848", "federalism"]
+  },
+  {
+    "id": "switzerland-cuisine",
+    "title": "Swiss Cuisine",
+    "questions": [
+      "What food is Switzerland known for?",
+      "What are famous Swiss dishes?",
+      "Is Switzerland known for chocolate and cheese?"
+    ],
+    "answer": "Swiss cuisine is regionally diverse and reflects the country's different languages, climates, and traditions. Well-known dishes include fondue, raclette, rösti, and Zürcher Geschnetzeltes. Switzerland is also famous for dairy products and cheeses such as Gruyère and Emmental, and for chocolate, whose modern reputation grew strongly in the nineteenth century.",
+    "tags": ["switzerland", "food", "cuisine", "chocolate", "cheese"]
+  },
+  {
+    "id": "switzerland-sports",
+    "title": "Sports in Switzerland",
+    "questions": [
+      "What sports are popular in Switzerland?",
+      "Is Switzerland known for winter sports?",
+      "What traditional sports does Switzerland have?"
+    ],
+    "answer": "Skiing, snowboarding, and mountaineering are strongly associated with Switzerland because of the country's Alpine landscape. Football and ice hockey are among the most watched sports. Traditional Swiss sports include Schwingen, a form of Swiss wrestling, as well as Hornussen and Steinstossen.",
+    "tags": ["switzerland", "sports", "skiing", "alps", "culture"]
   }
 ]
